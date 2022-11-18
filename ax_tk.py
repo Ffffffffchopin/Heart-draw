@@ -2,11 +2,12 @@ import random
 from math import sin, cos, pi, log
 from tkinter import *
 
+
 CANVAS_WIDTH = 640  # 画布的宽
 CANVAS_HEIGHT = 480  # 画布的高
 CANVAS_CENTER_X = CANVAS_WIDTH / 2  # 画布中心的X轴坐标
 CANVAS_CENTER_Y = CANVAS_HEIGHT / 2  # 画布中心的Y轴坐标
-IMAGE_ENLARGE = 11  # 放大比例
+IMAGE_ENLARGE = 10  # 放大比例
 HEART_COLOR = "#FFFFFF"  # 心的颜色
 
 
@@ -61,7 +62,7 @@ def shrink(x, y, ratio):
     dx = ratio * force * (x - CANVAS_CENTER_X)
     dy = ratio * force * (y - CANVAS_CENTER_Y)
     return x - dx, y - dy
-
+    #return x,y
 
 def curve(p):
     """
@@ -70,7 +71,7 @@ def curve(p):
     :return: 正弦
     """
     # 可以尝试换其他的动态函数，达到更有力量的效果（贝塞尔？）
-    return 10 * (2 * sin(4 * p)) / (2 * pi)
+    return 2 * (2 * sin(4 * p)) / (2 * pi)
 
 
 class Heart:
@@ -170,7 +171,7 @@ class Heart:
 def draw(main: Tk, render_canvas: Canvas, render_heart: Heart, render_frame=0):
     render_canvas.delete('all')
     render_heart.render(render_canvas, render_frame)
-    #main.after(160, draw, main, render_canvas, render_heart, render_frame + 1)
+    main.after(160, draw, main, render_canvas, render_heart, render_frame + 1)
 
 
 if __name__ == '__main__':
@@ -180,4 +181,4 @@ if __name__ == '__main__':
     canvas.pack()
     heart = Heart()
     draw(root, canvas, heart)
-    #root.mainloop()
+    root.mainloop()
