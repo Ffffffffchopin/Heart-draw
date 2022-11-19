@@ -9,10 +9,10 @@ Lambda=2
 #omega2=0.07
 k=2*pi/Lambda
 def WW(t,omega,k):
-    x=linspace(0,10,100)
+    x=linspace(0,10,200)
     return (x,cos(omega*t-k*x))
 def update(t,omega,k):
-    print(t)
+   # print(t)
     x,y=WW(t,omega,k)
     line.set_data((x,y))
     ax.set_xlim(0,10)
