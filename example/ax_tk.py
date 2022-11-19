@@ -1,7 +1,7 @@
 import random
 from math import sin, cos, pi, log
 from tkinter import *
-
+from scipy.special import jv
 
 CANVAS_WIDTH = 640  # 画布的宽
 CANVAS_HEIGHT = 480  # 画布的高
@@ -71,7 +71,8 @@ def curve(p):
     :return: 正弦
     """
     # 可以尝试换其他的动态函数，达到更有力量的效果（贝塞尔？）
-    return 2 * (2 * sin(4 * p)) / (2 * pi)
+    #return 2 * (2 * sin(4 * p)) / (2 * pi)
+    return jv(2,p)
 
 
 class Heart:
