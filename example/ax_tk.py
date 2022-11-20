@@ -1,3 +1,6 @@
+#看了视频才知道这段代码来自天哥
+#修改了颜色和一些放大倍数，把运动曲线改成了贝塞了曲线
+
 import random
 from math import sin, cos, pi, log
 from tkinter import *
@@ -72,7 +75,7 @@ def curve(p):
     """
     # 可以尝试换其他的动态函数，达到更有力量的效果（贝塞尔？）
     #return 2 * (2 * sin(4 * p)) / (2 * pi)
-    return jv(2,p)
+    return jv(10,p)
 
 
 class Heart:

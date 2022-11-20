@@ -21,7 +21,7 @@ HEART_COLOR='#FFFFFF'
 def data_gen():
     for cnt in count():
         t=cnt/10
-        yield ( 11*16*(np.sin(t)**3),11*(13*np.cos(t)-5*np.cos(2*t)-2*np.cos(3*t)-np.cos(4*t)))
+        yield ( 16*(np.sin(t)**3),(13*np.cos(t)-5*np.cos(2*t)-2*np.cos(3*t)-np.cos(4*t)))
 
 #def calc(time):
     #t=
